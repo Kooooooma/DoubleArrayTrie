@@ -84,7 +84,9 @@ public class DATrie {
                 endState = transfer(startState, getCode(chars[j]));
                 if (base[endState].getTransferRatio() != BASE_NULL && check[endState] == startState) { //节点存在于 Trie 树上
                     if (base[endState].isLeaf()) {
-                        result.add(base[endState].getValue());
+                        if (!result.contains(base[endState].getValue())) {
+                            result.add(base[endState].getValue());
+                        }
                     }
                     startState = endState;
                 } else {

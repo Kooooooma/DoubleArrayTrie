@@ -26,6 +26,14 @@ public class DATrieTest extends TestCase {
         words.add("lin");
         words.add("tian");
         words.add("xia");
+        words.add("中国");
+        words.add("人名");
+        words.add("中国人民");
+        words.add("人民");
+        words.add("孙健");
+        words.add("CSDN");
+        words.add("java");
+        words.add("java学习");
 
         //制作码表，以备验证
         Set<Character> codes = new HashSet<Character>();
@@ -50,8 +58,10 @@ public class DATrieTest extends TestCase {
         daTrie.printTrie();
 
         //执行匹配
-        List<Integer> result = daTrie.match("清华大学生都是华人");
-//        List<Integer> result = daTrie.match("qinshimingyuezhijunlintianxia");
+//        List<Integer> result = daTrie.match("清华大学生都是华人");
+//        List<Integer> result = daTrie.match("中国人名识别是中国人民的一个骄傲.孙健人民在CSDN中学到了很多最早iteye是java学习笔记叫javaeye但是java123只是一部分");
+        List<Integer> result = daTrie.match("qinshimingyuezhijunlintianxia");
+
 
         //打印匹配结果
         System.out.println();
