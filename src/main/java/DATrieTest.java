@@ -9,15 +9,14 @@ public class DATrieTest extends TestCase {
     public void testDATrie() {
         //定义词典
         List<String> words = new ArrayList<String>();
-//        words.add("清华");
-//        words.add("清华大学");
-//        words.add("清新");
-//        words.add("中华");
-//        words.add("中华人民");
-//        words.add("华人");
-//        words.add("学生");
-//        words.add("大学生");
-
+        words.add("清华");
+        words.add("清华大学");
+        words.add("清新");
+        words.add("中华");
+        words.add("中华人民");
+        words.add("华人");
+        words.add("学生");
+        words.add("大学生");
         words.add("qin");
         words.add("shi");
         words.add("ming");
@@ -48,20 +47,20 @@ public class DATrieTest extends TestCase {
         //构建 Trie 树
         DATrie daTrie = new DATrie();
         daTrie.build(words);
-        daTrie.showTrie();
+        daTrie.printTrie();
 
         //执行匹配
-//        List<String> result = daTrie.match("清华大学生都是华人");
-        List<String> result = daTrie.match("qinshimingyuezhijunlintianxia");
+        List<Integer> result = daTrie.match("清华大学生都是华人");
+//        List<Integer> result = daTrie.match("qinshimingyuezhijunlintianxia");
 
         //打印匹配结果
         System.out.println();
         System.out.printf("Match: {");
         for (int i = 0; i < result.size(); i++) {
             if (i == 0) {
-                System.out.printf("%s", result.get(i));
+                System.out.printf("%s", words.get(result.get(i)));
             } else {
-                System.out.printf(", %s", result.get(i));
+                System.out.printf(", %s", words.get(result.get(i)));
             }
         }
         System.out.printf("}");
